@@ -1,9 +1,6 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import type { ReactNode } from 'react';
 import './globals.css';
-import { ReactNode } from 'react';
-
-const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -13,11 +10,13 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children:ReactNode;
+  children: ReactNode;
 }>) {
   return (
     <html lang='en'>
-      <body className={inter.className}>{children}</body>
+      <body className='flex justify-center items-center w-full h-screen'>
+        {children}
+      </body>
     </html>
   );
 }
